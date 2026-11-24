@@ -1,0 +1,19 @@
+# Rust
+/target/
+**/target/
+
+# Agent and worktree scratch space
+/.worktrees/
+**/agent-logs/
+*.diff
+*.log
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/

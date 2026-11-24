@@ -1,0 +1,50 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "lead",
+  "instructions": [
+    "AGENTS.md",
+    "docs/architecture.md",
+    "docs/contracts/*.md"
+  ],
+  "worktree": {
+    "directory": "../kernel-tailor-worktrees"
+  },
+  "watcher": {
+    "ignore": [
+      "target/**",
+      "**/target/**",
+      ".worktrees/**",
+      "**/agent-logs/**"
+    ]
+  },
+  "experimental": {
+    "subagent_depth": 1
+  },
+  "permissions": [
+    { "action": "read", "resource": "**/.env*", "effect": "deny" },
+    { "action": "read", "resource": "**/.env.example", "effect": "allow" },
+    { "action": "read", "resource": "**/.env.sample", "effect": "allow" },
+    { "action": "read", "resource": "**/.env.template", "effect": "allow" },
+    { "action": "read", "resource": "**/*.pem", "effect": "deny" },
+    { "action": "read", "resource": "**/*.key", "effect": "deny" },
+    { "action": "read", "resource": "~/.ssh/**", "effect": "deny" },
+    { "action": "shell", "resource": "sudo *", "effect": "deny" },
+    { "action": "shell", "resource": "su *", "effect": "deny" },
+    { "action": "shell", "resource": "doas *", "effect": "deny" },
+    { "action": "shell", "resource": "pacman -U*", "effect": "deny" },
+    { "action": "shell", "resource": "pacman -R*", "effect": "deny" },
+    { "action": "shell", "resource": "mkinitcpio*", "effect": "deny" },
+    { "action": "shell", "resource": "limine*", "effect": "deny" },
+    { "action": "shell", "resource": "efibootmgr*", "effect": "deny" },
+    { "action": "shell", "resource": "bootctl*", "effect": "deny" },
+    { "action": "shell", "resource": "git push*", "effect": "deny" },
+    { "action": "shell", "resource": "git reset --hard*", "effect": "deny" },
+    { "action": "shell", "resource": "git clean -*", "effect": "deny" },
+    { "action": "shell", "resource": "rm -rf*", "effect": "deny" },
+    { "action": "shell", "resource": "cargo publish*", "effect": "deny" },
+    { "action": "shell", "resource": "cargo install*", "effect": "deny" },
+    { "action": "shell", "resource": "cargo login*", "effect": "deny" },
+    { "action": "shell", "resource": "cargo owner*", "effect": "deny" },
+    { "action": "shell", "resource": "cargo yank*", "effect": "deny" }
+  ]
+}

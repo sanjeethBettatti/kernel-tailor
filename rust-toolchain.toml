@@ -1,0 +1,6 @@
+# TASK-001 replaces "stable" with an exact version once CI exists, so local and
+# CI builds use the same compiler. Update that pin deliberately, never silently.
+[toolchain]
+channel = "stable"
+components = ["rustfmt", "clippy"]
+profile = "minimal"
